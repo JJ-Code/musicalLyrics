@@ -1,0 +1,47 @@
+{
+  "name": "musicallyrics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "client": "node scripts/start-client.js",
+    "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJ-Code/musicalLyrics.git"
+  },
+  "author": "jj-code",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJ-Code/musicalLyrics/issues"
+  },
+  "homepage": "https://github.com/JJ-Code/musicalLyrics#readme",
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "express-session": "^1.17.1",
+    "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
+    "mongoose": "^5.9.11",
+    "passport": "^0.4.1",
+    "passport-google": "^0.3.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.5.0",
+    "path": "^0.12.7"
+  }
+}
