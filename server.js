@@ -2,18 +2,20 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
+const models = require('./models')
+
 
 const expressGraphQL = require('express-graphql'); //graphql 
 
 
-const schema = require('./controllers/schema/schema');
+const schema = require('./schema/schema');
 
 //initialize express server
 const app = express();
 
 
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 5000;
 
 //reads the .env file
 require("dotenv").config()
@@ -36,6 +38,7 @@ app.use('/graphql', expressGraphQL({
 //connect to mongodb 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
+  useCreateIndex: true,
   useUnifiedTopology: true
 }).then((() => console.log("DB connected"))).catch(err => console.error(err))
 
